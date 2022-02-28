@@ -1,0 +1,13 @@
+:root {
+	--colorDark: #000;
+	--colorLight: #fff;
+	--colorDarkLight: #303030;
+}
+
+.appContainer {
+	background-image: url(../public/assets/tablet/bg-image-daytime.jpg);
+	min-height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
