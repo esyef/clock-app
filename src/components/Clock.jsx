@@ -1,8 +1,12 @@
-import { icons } from '../public/icons'
+import useTime from '../hooks/useTime'
+import { icons } from '../public/icons' // eslint-disable-line
 import styles from '../styles/styles.module.css'
 import Button from './Button'
 
 const Clock = () => {
+	const { data, loading } = useTime() // eslint-disable-line
+
+	console.log(data)
 	return (
 		<section className={`${styles.clock}`}>
 			<div className={styles.clockContent}>
@@ -15,12 +19,17 @@ const Clock = () => {
 
 				<div className={`${styles.timeNow}`}>
 					<p className={`${styles.time}`}>
-						11:37
-						<span className={`${styles.timeBST}`}>bst</span>
+						{/* 11:37 */}
+						{/* 
+						<span className={`${styles.timeBST}`}>bst</span> */}
 					</p>
 				</div>
 				<div className={styles.zone}>
-					<p className={styles.zoneText}> in london, uk</p>
+					{/* {!isLoading && (
+						<p className={styles.zoneText}>
+							in {location.country_name}, {location.country_code}
+						</p>
+					)} */}
 				</div>
 			</div>
 			<div className={styles.expand}>
