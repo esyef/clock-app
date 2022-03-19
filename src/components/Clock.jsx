@@ -1,12 +1,11 @@
-import useTime from '../hooks/useTime'
-import { icons } from '../public/icons' // eslint-disable-line
+import { icons } from '../public/icons'
 import styles from '../styles/styles.module.css'
 import Button from './Button'
+import { useTimeContext } from '../hooks/useTimeContext'
 
 const Clock = () => {
-	const { data, loading } = useTime() // eslint-disable-line
+	const { location, time } = useTimeContext() // eslint-disable-line
 
-	console.log(data)
 	return (
 		<section className={`${styles.clock}`}>
 			<div className={styles.clockContent}>

@@ -6,6 +6,7 @@
 	"jsxSingleQuote": true,
 	"trailingComma": "es5",
 	"bracketSpacing": true,
-	"brakeLine": true,
-	"arrowParens": "avoid"
+	"brakeLine": false,
+	"arrowParens": "avoid",
+	"proseWrap": "never"
 }
