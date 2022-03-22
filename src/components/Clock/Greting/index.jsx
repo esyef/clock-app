@@ -11,15 +11,21 @@ const Greting = () => {
 			</span>
 			{time.isMorning ? (
 				<p className={styles.greting}>
-					{time.isMorning ? 'Good Morning' : 'Good Afternoon' || 'Good Evening'}
-
+					Good Morning
 					<span className={styles.currently}>, it`s currently</span>
 				</p>
 			) : (
-				<p className={styles.greting}>
-					Good Evening
-					<span className={styles.currently}>, it`s currently</span>
-				</p>
+				(
+					<p className={styles.greting}>
+						Good Afternom
+						<span className={styles.currently}>, it`s currently</span>
+					</p>
+				) || (
+					<p className={styles.greting}>
+						Good evening
+						<span className={styles.currently}>, it`s currently</span>
+					</p>
+				)
 			)}
 		</div>
 	)
