@@ -1,0 +1,27 @@
+.wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 1rem;
+	align-items: center;
+}
+.icons {
+	display: block;
+}
+.greting {
+	color: var(--colorLight);
+	font-weight: 400;
+	font-size: clamp(0.9375rem, 2.5vw, 1.25rem);
+	line-height: 28px;
+	letter-spacing: clamp(3px, 10vw, 4px);
+	text-transform: uppercase;
+}
+
+.currently {
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.currently {
+		display: inline-block;
+	}
+}

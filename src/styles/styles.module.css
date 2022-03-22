@@ -4,17 +4,6 @@
 	--colorDarkLight: #303030;
 }
 
-.appContainer {
-	background-image: url(../public/assets/mobile/bg-image-daytime.jpg),
-		linear-gradient(to bottom, rgb(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-	background-blend-mode: darken;
-	min-height: 100vh;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	max-width: 1440px;
-}
-
 .refreshBtn {
 	display: inline-block;
 }
@@ -51,7 +40,6 @@
 }
 
 /* Quote */
-
 .quote {
 	display: flex;
 	gap: 1.0625rem;

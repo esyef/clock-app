@@ -1,18 +1,27 @@
-import Clock from './components/Clock'
-import Quote from './components/Quote'
+import { Clock, Button, Quote, Expand } from './components'
+import { ExpandState } from './context/Expand/ExpandState'
 import TimeState from './context/Time/TimeState'
-import styles from './styles/styles.module.css'
+
+import Layaout from './Layaout/Layaout'
+import styles from './Layaout/layaout.module.css'
 
 const App = () => {
 	return (
-		<div className={styles.appContainer}>
-			<TimeState>
-				<div className={styles.layaout}>
-					<Quote />
-					<Clock />
-				</div>
-			</TimeState>
-		</div>
+		<TimeState>
+			<Layaout>
+				<ExpandState>
+					<section className={styles.wrapper}>
+						<div className={styles.grid}>
+							<Clock />
+							<Button />
+							<Quote />
+						</div>
+					</section>
+
+					<Expand />
+				</ExpandState>
+			</Layaout>
+		</TimeState>
 	)
 }
 

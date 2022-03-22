@@ -1,0 +1,7 @@
+.time {
+	font-weight: 700;
+	font-size: clamp(6.25rem, 20vw, 12.5rem);
+	color: var(--colorLight);
+	line-height: clamp(6.25rem, 20vw, 12.5rem);
+	letter-spacing: -2.5px;
+}

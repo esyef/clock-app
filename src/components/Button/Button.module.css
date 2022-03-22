@@ -1,0 +1,42 @@
+.showExpand {
+	display: inline-flex;
+	align-items: center;
+
+	background-color: var(--colorLight);
+	background-blend-mode: normal;
+	color: rgba(0, 0, 0, 0.5);
+	font-weight: 700;
+	font-size: clamp(0.75rem, 2vw, 1rem);
+	line-height: 28px;
+	letter-spacing: 5px;
+	text-align: center;
+	text-transform: uppercase;
+
+	padding-block: clamp(10px, 2vw, 0.5rem);
+	padding-left: 1rem;
+	padding-right: 0.5rem;
+	border-radius: 28px;
+
+	align-self: flex-start;
+	justify-self: flex-start;
+}
+
+.icon {
+	background-color: var(--colorDarkLight);
+	border-radius: 50%;
+	padding: clamp(13px, 2vw, 18px);
+	margin-left: 15px;
+}
+
+@media screen and (min-width: 60rem) {
+	.showExpand {
+		grid-column: 4;
+
+		align-self: end;
+		justify-self: end;
+	}
+
+	.showExpand:hover {
+		cursor: pointer;
+	}
+}
