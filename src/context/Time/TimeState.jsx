@@ -14,8 +14,8 @@ const TimeState = ({ children }) => {
 	const [state, dispatch] = useReducer(TimeReducer, initialState)
 
 	const getLocation = async () => {
-		const API_KEY = import.meta.env.VITE_APIKEY
-		const URL_SERCVICE = `https://api.freegeoip.app/json/?apikey=${API_KEY}`
+		// const API_KEY = import.meta.env.VITE_APIKEY
+		const URL_SERCVICE = `https://api.freegeoip.app/json/?apikey=7e2aeaf0-98d2-11ec-b836-2baa8b457adf`
 		const res = await axios.get(`${URL_SERCVICE}`)
 		const data = await res.data
 
