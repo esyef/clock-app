@@ -34,7 +34,7 @@ const TimeState = ({ children }) => {
 
 	const getTimeWithLocation = async (zone, city) => {
 		const res = await axios.get(
-			`http://worldtimeapi.org/api/timezone/${zone}/${city}`
+			`https://worldtimeapi.org/api/timezone/${zone}/${city}`
 		)
 		const data = await res.data
 
