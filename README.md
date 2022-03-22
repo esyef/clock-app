@@ -34,7 +34,7 @@ Los usuarios pueden:
 ### Links
 
 - Repositorio: [Github - Clock App ](https://github.com/yeffweb/clock-app)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Clock App challenge](https://clock-app-challenge.netlify.app/)
 
 ## My process
 
