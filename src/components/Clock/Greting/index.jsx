@@ -1,33 +1,33 @@
 import { useTimeContext } from '../../../hooks/useTimeContext'
 import { icons } from '../../../public/icons'
-import styles from './Greting.module.css'
 
 const Greting = () => {
 	const { time } = useTimeContext()
+	let gretting = ''
+
+	if (time.isMorning) {
+		gretting = 'Good morning'
+	} else if (time.isAfternoon) {
+		gretting = 'Good afternoon'
+	} else if (time.isAEvening) {
+		gretting = 'Good evening'
+	}
+
 	return (
-		<div className={styles.wrapper}>
-			<span className={styles.icons}>
-				{time.isDayTime ? <img src={icons.sun} /> : <img src={icons.moon} />}
+		<section role='contentinfo' className='flex gap-x-2 items-center'>
+			<span className='inline-block'>
+				{time.isDayTime ? (
+					<img src={icons.sun} role='figure' />
+				) : (
+					<img src={icons.moon} role='figure' />
+				)}
 			</span>
-			{time.isMorning ? (
-				<p className={styles.greting}>
-					Good Morning
-					<span className={styles.currently}>, it`s currently</span>
-				</p>
-			) : (
-				(
-					<p className={styles.greting}>
-						Good Afternom
-						<span className={styles.currently}>, it`s currently</span>
-					</p>
-				) || (
-					<p className={styles.greting}>
-						Good evening
-						<span className={styles.currently}>, it`s currently</span>
-					</p>
-				)
-			)}
-		</div>
+
+			<p className='uppercase font-normal text-sm md:text-lg lg:text-xl'>
+				{gretting}
+				<span className='hidden md:inline-block'>, it`s currently</span>
+			</p>
+		</section>
 	)
 }
 

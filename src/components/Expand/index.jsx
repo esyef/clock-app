@@ -1,6 +1,5 @@
 import useShowExpand from '../../hooks/useShowExpand'
 import { useTimeContext } from '../../hooks/useTimeContext'
-import styles from './Expand.module.css'
 
 const Expand = () => {
 	const { time, location } = useTimeContext()
@@ -8,36 +7,44 @@ const Expand = () => {
 
 	return (
 		<section
-			className={`${time.isDayTime ? styles.bgLigth : styles.bgDark} ${
-				expand ? styles.show : styles.hidden
+			className={`${!expand ? 'hidden' : 'flex  backdrop-blur-md'} ${
+				time.isDaytime ? 'bg-white/75' : 'bg-black/75'
 			}`}
 		>
-			<div className={styles.wrapper}>
+			<div className='mx-auto w-11/12 md:w-10/12 lg:w-9/12 uppercase md:grid md:gap-x-20 md:gap-y-12 md:grid-cols-2 relative py-24 flex flex-col gap-5'>
 				<span
-					className={`${styles.separator} ${
-						time.isDayTime ? styles.separatorDark : styles.separatorLigth
-					}`}
+					role='figure'
+					className={`hidden lg:inline-block lg:h-44 lg:w-0.5 absolute lg:left-1/2 lg:top-24 opacity-10 mix-blend-normal
+					${time.isDaytime ? 'bg-slate-800' : 'bg-white'}`}
 				></span>
-				<div className={styles.grid}>
-					<div className={styles.subGrid}>
-						<p className={styles.description}>current timezone</p>
-						<p className={styles.descriptionValue}>{location.timezone}</p>
-					</div>
 
-					<div className={styles.subGrid}>
-						<p className={styles.description}>day of the year</p>
-						<p className={styles.descriptionValue}>{time.dayOfyear}</p>
-					</div>
-
-					<div className={styles.subGrid}>
-						<p className={styles.description}>day of the week</p>
-						<p className={styles.descriptionValue}>{time.dayOfWeek}</p>
-					</div>
-
-					<div className={styles.subGrid}>
-						<p className={styles.description}>week number</p>
-						<p className={styles.descriptionValue}>{time.weekNumber}</p>
-					</div>
+				<div className='flex justify-between items-center md:items-start md:flex-col md:gap-1'>
+					<p className='text-xs tracking-widest lg:text-sm font-normal'>
+						current timezone
+					</p>
+					<p className='font-bold lg:text-4xl md:text-2xl te'>
+						{location.timezone}
+					</p>
+				</div>
+				<div className='flex justify-between items-center  md:items-start md:flex-col md:gap-1'>
+					<p className='text-xs tracking-widest lg:text-sm font-normal'>
+						day of the week
+					</p>
+					<p className='font-bold lg:text-4xl md:text-2xl '>{time.dayOfWeek}</p>
+				</div>
+				<div className='flex justify-between md:items-start items-center md:flex-col md:gap-1'>
+					<p className='text-xs tracking-widest lg:text-sm font-normal'>
+						day of the year
+					</p>
+					<p className='font-bold lg:text-4xl md:text-2xl'>{time.dayOfWeek}</p>
+				</div>
+				<div className='flex  md:items-start justify-between items-center md:flex-col md:gap-1'>
+					<p className='text-xs tracking-widest lg:text-sm font-normal'>
+						week number
+					</p>
+					<p className='font-bold md:text-2xl lg:text-4xl '>
+						{time.weekNumber}
+					</p>
 				</div>
 			</div>
 		</section>

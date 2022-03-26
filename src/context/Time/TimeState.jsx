@@ -39,15 +39,14 @@ const TimeState = ({ children }) => {
 		const data = await res.data
 
 		const { timeObject } = timeFormatUtilitie(data.datetime)
-		const {
-			hour,
-			minutes,
-			isMorning,
-			isAfternoon,
-			isEvening,
-			isDayTime,
-			isNighttime,
-		} = timeObject
+		const { hour, minutes } = timeObject
+
+		const hourMinutes = `${hour}:${minutes}`
+		const isDayTime = hourMinutes >= '05:00' && hourMinutes <= '17:59'
+		const isNightTime = hourMinutes >= '18:00' && hourMinutes <= '04:59'
+		const isMorning = hourMinutes >= '05:00' && hourMinutes <= '11:59'
+		const isAfternoon = hourMinutes >= '12:00' && hourMinutes <= '17:59'
+		const isAEvening = hourMinutes >= '18:00'
 
 		const newObject = {
 			datetime: data.datetime,
@@ -56,11 +55,11 @@ const TimeState = ({ children }) => {
 			weekNumber: data.week_number,
 			hour,
 			minutes,
+			isDayTime,
+			isNightTime,
 			isMorning,
 			isAfternoon,
-			isEvening,
-			isDayTime,
-			isNighttime,
+			isAEvening,
 		}
 		dispatch({
 			type: 'GETTIME',

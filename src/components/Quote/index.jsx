@@ -2,7 +2,6 @@ import useQuote from '../../hooks/useQuote'
 import useShowExpand from '../../hooks/useShowExpand'
 
 import { icons } from '../../public/icons'
-import styles from './Quote.module.css'
 
 const Quote = () => {
 	const { quote, refreshQuote } = useQuote()
@@ -10,15 +9,17 @@ const Quote = () => {
 
 	return (
 		<article
-			className={`${styles.wrapper} ${!expand ? styles.show : styles.hidden}`}
+			className={`${expand ? 'hidden' : 'flex'} justify-between max-w-lg`}
 		>
-			<div>
-				<p className={styles.quote}>{quote.quote}</p>
-				<p className={styles.author}>{quote.author}</p>
+			<div className='font-normal text-sm md:text-lg lg:text-xl leading-5  md:leading-7 w-11/12 md:w-md'>
+				<p>{quote.quote}</p>
+				<p className='font-bold'>{quote.author}</p>
 			</div>
-			<a onClick={refreshQuote} className={styles.refresh}>
-				<img src={icons.refresh} />
-			</a>
+			<div role='button'>
+				<a role='button' onClick={refreshQuote} className='inline-block'>
+					<img src={icons.refresh} role='img' />
+				</a>
+			</div>
 		</article>
 	)
 }
